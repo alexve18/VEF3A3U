@@ -1,5 +1,11 @@
 <?php
 	namespace Tools\Classes;
+
+	$classloader = 'classLoader.php';
+	if (is_readable($classloader)) {
+		require_once($classloader);
+	}
+
 	class class_user
 	{
 		protected $password;
@@ -16,10 +22,10 @@
 		public function getPassword() {
 			return $this->password;
 		}
-		protected function setEmail($new_email) {
+		public function setEmail($new_email) {
 			$this->email = $new_email;
 		}
-		protected function setPassword($new_password) {
+		public function setPassword($new_password) {
 			$this->password = $new_password;
 		}
 	}
